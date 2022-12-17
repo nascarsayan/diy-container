@@ -1,3 +1,5 @@
+# Create a container from scratch
+
 ## Host machine setup
 
 ### Alternate 1. Install directly on a Linux machine
