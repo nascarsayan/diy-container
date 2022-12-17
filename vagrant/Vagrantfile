@@ -1,0 +1,8 @@
+Vagrant.configure("2") do |config|
+  # config.vm.box = "hashicorp/bionic64" # AMD 64-bit Ubuntu 18.04
+  config.vm.box = "spox/ubuntu-arm" # ARM 64-bit Ubuntu 20.04
+  config.vm.hostname = "diy-container"
+  config.vm.network "public_network"
+  config.vm.synced_folder "syncfs", "/home/vagrant/syncfs"
+  config.vm.provision :shell, path: "bootstrap.sh"
+end
