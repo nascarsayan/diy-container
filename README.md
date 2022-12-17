@@ -1,10 +1,10 @@
 ## Host machine setup
 
-### Altername 1. Install directly on a Linux machine
+### Alternate 1. Install directly on a Linux machine
 You can use any Ubuntu machine, with version >= 16.04. Use [this script](./scripts/install-prereqs.sh) to install the dependencies.
 For any other distro, the installation steps would be similar, but the package names might be different.
 
-### Altername 2. Use vagrant
+### Alternate 2. Use vagrant
 The Vagrantfile is present [here](./vagrant/Vagrantfile).
 I am using a vagrant box `spox/ubuntu-arm` because my physical machine has apple silicon chip.
 You can use `hashicorp/bionic64` or any other boxes in case your CPU is Intel x86/64.
