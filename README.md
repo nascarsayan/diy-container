@@ -140,7 +140,7 @@ mount -t proc proc /proc
 sudo ip netns add dummy && sudo ip netns delete dummy
 sudo touch /run/netns/bottle
 sudo chmod 0 /run/netns/bottle
-sudo mount --bind /proc/$(pgrep unshare)/ns/net /run/netns/bottle
+sudo mount --bind /proc/$(pidof unshare)/ns/net /run/netns/bottle
 ```
 
 #### Setting up the network connection
@@ -189,8 +189,8 @@ echo 'nameserver 192.168.1.1' > /etc/resolv.conf # In the container
 ```sh
 
 # Get the PID of the sh running in the container.
-pstree -p $(pgrep unshare)
-CON_SH_PID=$(pgrep sh | tail -n 1)
+pstree -p $(pidof unshare)
+CON_SH_PID=$(pidof sh | tail -n 1)
 
 # Create a new cgroup for controlling the max number of processes in the container
 sudo mkdir -p /sys/fs/cgroup/pids/bottle
@@ -215,4 +215,15 @@ sleep 10000 &
 
 # Check the number of processes that are currently running in the container
 sudo cat /sys/fs/cgroup/pids/bottle/pids.current
+```
+
+### Viewing cgroups and namespaces
+
+```sh
+# View the cgroup tree
+systemd-cgls
+sudo tree /sys/fs/cgroup
+
+# View the namespaces of a process
+ls -l /proc/$(pidof unshare)/ns
 ```
