@@ -79,8 +79,8 @@ sudo umount /home/vagrant/ship/overlay/merged
 popd
 ```
 
-[Docker Storage Drivers](https://docs.docker.com/storage/storagedriver/)
-[Docker Storage Driver Types](https://docs.docker.com/storage/storagedriver/select-storage-driver/)
+- [Docker Storage Drivers](https://docs.docker.com/storage/storagedriver/)
+- [Docker Storage Driver Types](https://docs.docker.com/storage/storagedriver/select-storage-driver/)
 
 ## Create a Container from the Image
 
