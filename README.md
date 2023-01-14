@@ -149,7 +149,7 @@ sudo mount --bind /proc/$(pidof unshare)/ns/net /run/netns/bottle
 BRIDGE_IP="172.17.0.1"
 CON_IP="172.17.0.100"
 BRIDGE_NAME="docker0"
-PREFIX_LEN="/24"
+PREFIX_LEN="/16"
 
 # Let's check the network configuration of a container created using docker
 docker run -d --name moby alpine sleep 100000
